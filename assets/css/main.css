@@ -655,15 +655,18 @@ h2.title:before{
 }
 
 .single-products:hover .product-overlay {
+
   display:block;
   height:100%;
 }
 
 .productinfo h2{
+
   color: #9900CC;
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
   font-weight: 700;
+
 }
 
 .product-overlay h1{
@@ -746,12 +749,13 @@ h2.title:before{
 }
 
 .add-to-cart:hover {
+
   background: #9900CC;
   color: #FFFFFF;
 }
 
 .product-overlay {
-  background:#9900CC;
+  background-color:rgba(142, 68, 173, 0.7);
   top: 0;
   display: none;
   height: 0;
@@ -759,7 +763,7 @@ h2.title:before{
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-  opacity:0.7;
+  
 }
 
 .product-overlay .overlay-content {
@@ -768,6 +772,7 @@ h2.title:before{
   bottom: 0;
   text-align: center;
   width: 100%;
+  
 }
 
 .choose {
@@ -831,7 +836,7 @@ h2.title:before{
 
 
 .criteriabut{
-  border-radius: 9px;
+  
   margin:10px;
   width:190px;
   height:40px;
@@ -839,6 +844,7 @@ h2.title:before{
 
 .criteriabutsel{
   background-color: #9b59b6;
+  color:#FFFFFF;
 }
 
 .home-container{

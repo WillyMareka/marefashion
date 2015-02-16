@@ -15,7 +15,7 @@
 |
 */
 
-$config['base_url']	= 'http://'.$_SERVER['SERVER_NAME'].'/fashion/';
+$config['base_url']	= 'http://'.$_SERVER['SERVER_NAME'].'/marefashion/';
 
 
 /*

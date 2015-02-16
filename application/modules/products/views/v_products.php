@@ -10,7 +10,7 @@
 							<div class="control-group">
   								
   								
-                                    <select name="prodcompany" type="text" value="<?php echo set_value('prodcompany'); ?>" class="criteriabut" id="prodcompany">
+                                    <select name="prodcompany" type="text" value="<?php echo set_value('prodcompany'); ?>" class="criteriabut" id="companycombo">
                                         <?php echo $product_companies?>
                                     </select>
   									
@@ -18,14 +18,14 @@
   								
   								
   								
-                                    <select name="prodcategory" type="text" value="<?php echo set_value('prodcategory'); ?>" class=" criteriabut " id="prodcategory">
+                                    <select name="prodcategory" type="text" value="<?php echo set_value('prodcategory'); ?>" class=" criteriabut " id="categorycombo">
                                         <?php echo $product_categories?>
                                     </select>
   									
   								
   								
   								
-                                    <select  name="prodtype" type="text" value="<?php echo set_value('prodtype'); ?>" class="criteriabut " id="prodtype">
+                                    <select  name="prodtype" type="text" value="<?php echo set_value('prodtype'); ?>" class="criteriabut " id="typecombo">
                                         <?php echo $product_types?>
                                     </select>
   									
@@ -243,7 +243,13 @@
 					
 				</div>
 
-
+				
+				<div id="cart">
+					
+					
+				</div> -->
+				
+				
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
@@ -273,14 +279,14 @@
 											<h2>Company</h2><p><?php echo $data['prod_company']; ?></p>
 
 
-											<a href="<?php echo base_url(). 'home/add_to_cart_check/'.$data['prod_id']?>" class="btn btn-default add-to-cart modalshow"><i class="shop icon"></i>Add to cart</a>
+											<a href="<?php echo base_url().'home/add_to_cart_check/'. $data['prod_id'];?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 
 										</div>
 									</div>
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="ion-image icon"></i>View Product</a></li>
+										<!-- <li><a href=""><i class="ion-image icon"></i>View Product</a></li> -->
 										<!-- <li><a href=""><i class="star icon"></i>Add to compare</a></li> -->
 									</ul>
 								</div>
@@ -293,8 +299,6 @@
                       	
                       } 
 						?>
-						
-							
 						<!-- <div id="pagination" class="span12 pagination">
 
 						<ul class="span12 pagination">

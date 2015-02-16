@@ -25,31 +25,6 @@ class Products extends MY_Controller {
 		
 	}
 
-    function productprofile($id)
-    {
-        $userdet = array();
-        $results = $this->m_manager->productprofile($id);
-
-        foreach ($results as $key => $values) {
-            $details['product'][] = $values;  
-        }
-       // echo '<pre>';print_r($data['user']);echo '</pre>';die;
-
-        $data['error'] = '';
-        
-        $data['ownprofile'] = $odetails;
-        $data['messagenumber']  = $this->getmessagenumber();
-    $data['productnumber']  = $this->getproductnumber();
-    $data['categorynumber']  = $this->getcategorynumber();
-    $data['typenumber']  = $this->gettypenumber();
-    $data['companynumber']  = $this->getcompanynumber();  
-    $data['dcompanynumber']  = $this->getdcompanynumber();  
-        $data['product'] = $details;
-        
-
-        $this->load->view('view_product', $data);
- 
-    }
 
 
     public function view()

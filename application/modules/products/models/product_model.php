@@ -44,24 +44,6 @@ class Product_model extends MY_Model {
 		
 
 
-  public function productprofile($id)
-    {
-         $profile = array();
-         
-         $query = $this->db->get_where('products', array('prod_id' => $id));
-         $result = $query->result_array();
-
-            if ($result) {
-               foreach ($result as $key => $value) {
-        $profile[$value['prod_id']] = $value;
-      }
-      //echo '<pre>';print_r($messages);echo '</pre>';die();
-      return $profile;
-
-    }
-    
-    return $profile;
-    }
 
   public function get_all_companies()
   {
