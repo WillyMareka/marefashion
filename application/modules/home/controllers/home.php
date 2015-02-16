@@ -52,6 +52,7 @@ class Home extends MY_Controller {
 		$this->load->view('footer');
 	}
 
+
   public function sendmessage()
   {
          $this->load->library('form_validation');
@@ -79,10 +80,11 @@ class Home extends MY_Controller {
         }
   }
 
-	 public function add_to_cart_check()
+	 public function add_to_cart_check($prod_id)
+
 	 {
       if($this->session->userdata('logged_in')){
-			redirect('cart/add_products');
+			redirect('shop/add_products/'.$prod_id);
       }
       else{
         redirect('user/log');
