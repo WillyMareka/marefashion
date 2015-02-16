@@ -22,21 +22,15 @@ $(document).ready(function(){
 		});
 	});
 
-
-  $(function(){
-
-  	available = $('input[name="prodcompany"]').val();
-  	if($('input[name="prodcompany"]').val()){
-  		$('#prodcompany').addClass('criteriabutsel');
-  	}else{
-  		$('#prodcompany').removeClass('criteriabutsel');
-  	}
-
-  });
-
-
-
-
-
+    //alert('Hello');
+  	$('#companycombo').change(function(){
+  		compvalue = $(this).val();
+  		  if(compvalue !== 'Select the Company'){
+              $(this).addClass('criteriabutsel');
+              //alert('changed');
+  		  }else{
+              $(this).removeClass('criteriabutsel');
+  		  }
+  	});
 
 });

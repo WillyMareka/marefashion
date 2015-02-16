@@ -10,7 +10,7 @@
 							<div class="control-group">
   								
   								
-                                    <select name="prodcompany" type="text" value="<?php echo set_value('prodcompany'); ?>" class="criteriabut" id="prodcompany">
+                                    <select name="prodcompany" type="text" value="<?php echo set_value('prodcompany'); ?>" class="criteriabut" id="companycombo">
                                         <?php echo $product_companies?>
                                     </select>
   									
@@ -18,14 +18,14 @@
   								
   								
   								
-                                    <select name="prodcategory" type="text" value="<?php echo set_value('prodcategory'); ?>" class=" criteriabut " id="prodcategory">
+                                    <select name="prodcategory" type="text" value="<?php echo set_value('prodcategory'); ?>" class=" criteriabut " id="categorycombo">
                                         <?php echo $product_categories?>
                                     </select>
   									
   								
   								
   								
-                                    <select  name="prodtype" type="text" value="<?php echo set_value('prodtype'); ?>" class="criteriabut " id="prodtype">
+                                    <select  name="prodtype" type="text" value="<?php echo set_value('prodtype'); ?>" class="criteriabut " id="typecombo">
                                         <?php echo $product_types?>
                                     </select>
   									
@@ -251,7 +251,7 @@
 										<h2>Kshs <?php echo $data['price']; ?></h2>
 										<p><?php echo $data['prod_name']; ?></p>
 									</div>
-									<div class="product-overlay" style="background-color:rgba(142, 68, 173, 0.7);">
+									<div class="product-overlay">
 										<div class="overlay-content">
 											
 											<h2><?php echo $data['prod_name']; ?></h2>

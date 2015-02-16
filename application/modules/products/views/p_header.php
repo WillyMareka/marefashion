@@ -60,7 +60,7 @@
         $username = $this->session->userdata('username');
   ?>
 
-  <li><a href="#"><i class="star icon"></i> Wishlist</a></li>
+  
   <li><a href='<?php echo base_url(). 'shop'?>'><i class="shop icon"></i> Cart</a></li>
 
   <li><div class="ui vertical divider"></div></li>
