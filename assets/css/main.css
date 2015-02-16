@@ -858,7 +858,27 @@ h2.title:before{
 }
 
 
+.profile-container{
+  margin: 30px;
+}
 
+.upper-profile{
+  margin:9px;
+  margin-bottom: 10px;
+}
+
+.lower-profile{
+  margin: 9px;
+}
+
+.update-button{
+  margin:10px;
+}
+
+.text-color{
+  font-weight: bolder;
+  color:#8e44ad;
+}
 
 
 
