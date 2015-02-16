@@ -53,4 +53,4 @@
 
 </table>
 
-<p><?php echo form_submit('shop/update'.$rowid, 'Update your Cart'); ?></p>
+<p><?php echo form_submit('shop/update'.$items['rowid'], 'Update your Cart'); ?></p>
