@@ -9,7 +9,7 @@
 
 	?>
 	    <div class="well well-sm">
-            Thank you <?php echo $reply?>  for commenting in our site
+	    	Thank you for your comments, <?php echo $reply?>
 	    </div>
 
 	<?php 
