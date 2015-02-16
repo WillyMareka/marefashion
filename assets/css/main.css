@@ -755,7 +755,7 @@ h2.title:before{
 }
 
 .product-overlay {
-  background:#9900CC;
+  background-color:rgba(142, 68, 173, 0.7);
   top: 0;
   display: none;
   height: 0;
@@ -763,11 +763,7 @@ h2.title:before{
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-<<<<<<< HEAD
-  
-=======
   opacity:0.7;
->>>>>>> 45c880e3788a01d303060a4ced05a09c5848f106
 }
 
 .product-overlay .overlay-content {
@@ -840,7 +836,7 @@ h2.title:before{
 
 
 .criteriabut{
-  border-radius: 9px;
+  
   margin:10px;
   width:190px;
   height:40px;

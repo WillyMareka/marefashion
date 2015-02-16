@@ -224,7 +224,13 @@
 					
 				</div>
 
-
+				
+				<div id="cart">
+					
+					
+				</div> -->
+				
+				
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
@@ -245,7 +251,7 @@
 										<h2>Kshs <?php echo $data['price']; ?></h2>
 										<p><?php echo $data['prod_name']; ?></p>
 									</div>
-									<div class="product-overlay">
+									<div class="product-overlay" style="background-color:rgba(142, 68, 173, 0.7);">
 										<div class="overlay-content">
 											
 											<h2><?php echo $data['prod_name']; ?></h2>
@@ -253,15 +259,13 @@
 											<h2>Price</h2><p>Kshs <?php echo $data['price']; ?></p>
 											<h2>Company</h2><p><?php echo $data['prod_company']; ?></p>
 
-
-											<a href="<?php echo base_url(). 'home/add_to_cart_check/'.$data['prod_id']?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-
+											<a href="<?php echo base_url().'home/add_to_cart_check/'. $data['prod_id'];?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 										</div>
 									</div>
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="ion-image icon"></i>View Product</a></li>
+										<!-- <li><a href=""><i class="ion-image icon"></i>View Product</a></li> -->
 										<!-- <li><a href=""><i class="star icon"></i>Add to compare</a></li> -->
 									</ul>
 								</div>
@@ -274,8 +278,6 @@
                       	
                       } 
 						?>
-						
-							
 						<!-- <div id="pagination" class="span12 pagination">
 
 						<ul class="span12 pagination">
