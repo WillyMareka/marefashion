@@ -10,6 +10,7 @@
   <!-- <th style="">Remove</th> -->
 </tr>
 
+
 <?php $i = 1; ?>
 
 <?php foreach ($this->cart->contents() as $items): ?>

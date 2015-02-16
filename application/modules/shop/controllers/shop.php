@@ -18,6 +18,7 @@ class Shop extends MY_Controller {
 	
 	public function show_cart(){
 		$cart = $this->cart->contents();
+		
 		echo "<pre>";print_r($cart);
 		
 	}
