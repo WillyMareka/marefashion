@@ -224,13 +224,7 @@
 					
 				</div>
 
-				
-				<div id="cart">
-					
-					
-				</div> -->
-				
-				
+
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
@@ -259,7 +253,9 @@
 											<h2>Price</h2><p>Kshs <?php echo $data['price']; ?></p>
 											<h2>Company</h2><p><?php echo $data['prod_company']; ?></p>
 
-											<a href="<?php echo base_url().'home/add_to_cart_check/'. $data['prod_id'];?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
+
+											<a href="<?php echo base_url(). 'home/add_to_cart_check/'.$data['prod_id']?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
+
 										</div>
 									</div>
 								</div>
@@ -278,6 +274,8 @@
                       	
                       } 
 						?>
+						
+							
 						<!-- <div id="pagination" class="span12 pagination">
 
 						<ul class="span12 pagination">

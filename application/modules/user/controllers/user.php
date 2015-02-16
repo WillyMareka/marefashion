@@ -64,10 +64,11 @@ class User extends MY_Controller {
         
         if($this->form_validation->run() == FALSE){
         	$data['new_user'] = 'Please enter your credentials first';
+
 			$this->load->view('log_header');
-		    $this->load->view('v_log');
+		    $this->load->view('v_log',$data);
 		    $this->load->view('home/footer');
-		    
+
 		}else{
 			
 			$result = $this->user_model->log_member();		
