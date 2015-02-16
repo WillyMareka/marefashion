@@ -15,6 +15,7 @@ class Shop_model extends MY_Model {
 		$result = $query->result_array();
 		
   		// Detect the number of returned rows
+  		
   			//if($query->num_rows() == 1) {
    					// Return the first row:
    			//return $result[0];
