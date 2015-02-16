@@ -655,15 +655,18 @@ h2.title:before{
 }
 
 .single-products:hover .product-overlay {
+
   display:block;
   height:100%;
 }
 
 .productinfo h2{
+
   color: #9900CC;
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
   font-weight: 700;
+
 }
 
 .product-overlay h1{
@@ -746,6 +749,7 @@ h2.title:before{
 }
 
 .add-to-cart:hover {
+
   background: #9900CC;
   color: #FFFFFF;
 }
@@ -759,7 +763,7 @@ h2.title:before{
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-  opacity:;
+  
 }
 
 .product-overlay .overlay-content {
@@ -768,6 +772,7 @@ h2.title:before{
   bottom: 0;
   text-align: center;
   width: 100%;
+  opacity:0.7;
 }
 
 .choose {
