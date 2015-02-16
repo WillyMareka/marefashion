@@ -28,19 +28,24 @@ class Product_model extends MY_Model {
     return $products;
   }
 	
-	/*public function get($prod_id){
-			
-		$query = $this->db->get_where('products', array('prod_id' => $prod_id));
-		
-		$result = $query->result_array();
-  // You should use $q->num_rows() to detect the number of returned rows
-  		//if($query->num_rows() == 1) {
-   // Return the first row:
-   			//return $result[0];
-  		//}
-  		return $result[0];
-		
- }*/
+	public function ownprofile($ac_id)
+    {
+         $profile = array();
+         
+         $query = $this->db->get_where('accounts', array('ac_id' => $ac_id));
+         $result = $query->result_array();
+
+            if ($result) {
+               foreach ($result as $key => $value) {
+        $profile[$value['ac_id']] = $value;
+      }
+      //echo '<pre>';print_r($messages);echo '</pre>';die();
+      return $profile;
+
+    }
+    
+    return $profile;
+    }
 		
 
 

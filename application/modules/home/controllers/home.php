@@ -34,6 +34,21 @@ class Home extends MY_Controller {
 		$this->load->view('home_footer');
 	}
 
+  public function profile()
+    {
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->model_home->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
+        
+        $this->load->view('header', array('logged_in' => $this->logged_in, $data));
+        $this->load->view('profile', $data);
+        $this->load->view('footer');
+    }
+
 	public function about()
 	{
 		$this->load->view('header', array('logged_in' => $this->logged_in));

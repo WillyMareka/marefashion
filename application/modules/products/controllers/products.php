@@ -32,6 +32,9 @@ class Products extends MY_Controller {
         $this->load->library('pagination');
         $this->load->library('table');
 
+        
+       
+
         $data['total_rows'] = $this->db->get('products')->num_rows();
         $data['per_page'] = 9;
         $data['num_links'] = 3;
@@ -39,16 +42,31 @@ class Products extends MY_Controller {
 
         $this->pagination->initialize($data); 
 
-
+        
 		$data['product_categories']  = $this->getproductcategories();
         $data['product_types']  = $this->getproducttypes();
         $data['product_companies']  = $this->getproductcompanies();
         $data['criteria'] = $this->choosecriteria();
 
 
-		$this->load->view('p_header', array('logged_in' => $this->logged_in));
+		$this->load->view('p_header', array('logged_in' => $this->logged_in, $data));
 		$this->load->view('v_products', $data);
 		$this->load->view('p_footer');
+    }
+
+    public function profile()
+    {
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->product_model->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
+        
+        $this->load->view('p_header', array('logged_in' => $this->logged_in, $data));
+        $this->load->view('profile', $data);
+        $this->load->view('p_footer');
     }
 
 

@@ -9,6 +9,26 @@ class Model_home extends MY_Model {
     }
 
 
+    public function ownprofile($ac_id)
+    {
+         $profile = array();
+         
+         $query = $this->db->get_where('accounts', array('ac_id' => $ac_id));
+         $result = $query->result_array();
+
+            if ($result) {
+               foreach ($result as $key => $value) {
+        $profile[$value['ac_id']] = $value;
+      }
+      //echo '<pre>';print_r($messages);echo '</pre>';die();
+      return $profile;
+
+    }
+    
+    return $profile;
+    }
+
+
     public function get_shirts()
   {
     $products = array();

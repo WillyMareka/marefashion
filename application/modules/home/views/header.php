@@ -99,7 +99,7 @@
       }elseif($logged_in){
   ?>
 
-  <li><a href="#"><i class="star icon"></i> Wishlist</a></li>
+  
   <li><a href="#"><i class="shop icon"></i> Cart</a></li>
 
   <li><div class="ui vertical divider"></div></li>
@@ -108,8 +108,8 @@
     <div class="ui simple dropdown item">
       <i class="user icon "></i> <?php echo $username;?><i class="dropdown icon"></i>
        <div class="menu">
-        <a class="item"><i class="edit icon"></i> View Profile</a>
-        <a class="item"><i class="mail icon"></i> Messages</a>
+        <a href="<?php echo base_url(). 'home/profile' ?>" class="item"><i class="edit icon"></i> View Profile</a>
+        <a href="<?php echo base_url(). '' ?>" class="item"><i class="mail icon"></i> Messages</a>
         <div class="ui divider"></div>
         <a href='<?php echo base_url(). 'user/logout'?>' class="item"><i class="sign out icon"></i> Log Out</a>
        </div>
