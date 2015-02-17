@@ -48,7 +48,7 @@
 <tr>
   <!-- <td colspan="2"> </td> -->
   <td class="right"><strong>Grand Total</strong></td>
-  <td class="right">$<?php echo $this->cart->format_number($this->cart->total()); ?></td>
+  <td class="right">Kshs<?php echo $this->cart->format_number($this->cart->total()); ?></td>
 </tr>
 
 </table>

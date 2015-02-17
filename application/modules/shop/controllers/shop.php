@@ -19,7 +19,7 @@ class Shop extends MY_Controller {
 	public function show_cart(){
 		$cart = $this->cart->contents();
 		
-		echo "<pre>";print_r($cart);
+		// echo "<pre>";print_r($this->cart->contents());echo"</pre>";die();
 		
 	}
 	
@@ -47,9 +47,9 @@ class Shop extends MY_Controller {
 		//$this->load->view('shopview'); 
 	}
 	
-	public function remove($row_id){
+	public function remove($rowid){
 		$data = array(
-			'row_id' => $row_id,
+			'row_id' => $rowid,
 			'qty' => '0',
 		);
 		$this->cart->update($data);

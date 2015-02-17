@@ -187,6 +187,25 @@
 					</div>
 				</div>
 				
+				<div class="ui small modal">
+  						<i class="close icon"></i>
+  							<div class="header">
+    							Success
+ 	 						</div>
+  				<div class="content">
+    					<div class="left">
+      							Successfully added to cart
+    					</div>
+    			<div class="right">
+      						Content can appear on right
+   	 			</div>
+  				</div>
+  					<div class="actions">
+    					<div class="ui button">Cancel</div>
+    					<div class="ui button">OK</div>
+  				</div>
+				</div>
+				
 				<!--implementing from the db-->
 
 				<!-- <div id="products">
@@ -259,7 +278,9 @@
 											<h2>Price</h2><p>Kshs <?php echo $data['price']; ?></p>
 											<h2>Company</h2><p><?php echo $data['prod_company']; ?></p>
 
+
 											<a href="<?php echo base_url().'home/add_to_cart_check/'. $data['prod_id'];?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
+
 										</div>
 									</div>
 								</div>
@@ -300,3 +321,19 @@
 			</div>
 		</div>
 	</section>
+	
+	<script>
+		$(document).ready(function(){
+			$('.modalshow').click(function() {
+				e.preventDefault();
+            $('.small.modal')
+  			.modal('show')
+			;	
+        });
+			
+			
+		
+			
+		});
+		
+	</script>
