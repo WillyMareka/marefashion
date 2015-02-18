@@ -7,13 +7,24 @@ class Shop extends MY_Controller {
         // Call the Model constructor
         parent::__construct();
 		$this->load->model('shop_model');
+
+		if ($this->session->userdata('logged_in')) {
+         	$this->logged_in = TRUE;
+         } else {
+         	//$this->logged_in = FASLE;
+         }
     }
 	
 	public function index()
     {
         $this->load->helper('form');
 		$this->load->library('cart');
-        $this->load->view('shopview'); 
+		$data['error'] = '';
+
+
+		$this->load->view('cart_header', array('logged_in' => $this->logged_in, $data)); 
+        $this->load->view('shopview');
+        $this->load->view('cart_footer');  
     }
 	
 	public function show_cart(){
