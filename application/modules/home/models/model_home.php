@@ -8,6 +8,80 @@ class Model_home extends MY_Model {
         parent::__construct();
     }
 
+     public function update_member(){
+      $id = $this->input->post('id');
+      $firstname = strtoupper($this->input->post('fname'));
+      $middlename = strtoupper($this->input->post('mname'));
+      $lastname = strtoupper($this->input->post('lname'));
+      $filename = $this->input->post('picture');
+      $pnumber = $this->input->post('pnumber');
+      $gender = strtoupper($this->input->post('gender'));
+      $nationality = strtoupper($this->input->post('nationality'));
+      $age = $this->input->post('age');
+      $religion = strtoupper($this->input->post('religion'));
+      $residence = strtoupper($this->input->post('residence'));    
+      $email = $this->input->post('email');
+
+      $member_details_data = array(
+
+          'f_name' => $firstname,
+          'm_name' => $middlename,
+          'l_name' => $lastname,
+          'age' => $age,
+          'nationality' => $nationality,
+          'phone_no' => $pnumber,
+          'email' => $email,
+          'residence' => $residence,
+          'religion' => $religion,
+          'gender' => $gender
+      );
+
+        $this->db->where('ac_id', $id);
+        $this->db->update('accounts', $member_details_data);
+
+       
+
+      if($this->db->affected_rows() === 1){
+
+        return $id;
+
+      }else{
+
+      $subject = 'Member Entry';
+      $message = 'Problem in registering User ID '.$id.' . Please rectify immediatelly';
+
+      $message_details_data = array();
+      $message_details = array(
+          'subject' => $subject,
+          'message' => $message
+      );
+
+        
+
+        array_push($message_details_data, $message_details);
+
+        //echo '<pre>'; print_r($member_details_data); echo '<pre>'; die;
+
+        $this->db->insert_batch('mail',$message_details_data);
+
+        //echo 'Applicant is not able to be registered';
+        $this->load->library('email');
+        $this->email->from('info@marewill.com','MareWill Fashion');
+        $this->email->to('marekawilly@marewill.com','marekawilly@gmail.com');
+        $this->email->subject('Failed registeration of a user');
+
+        if(isset($email)){
+            $this->email->message('Unable to register and insert user with the email of '.$email.' to the database.');
+        }else{
+            $this->email->message('Unable to register and insert user to the database.');
+
+        }
+
+        $this->email->send();
+        return FALSE;
+     }
+    }
+
 
     public function ownprofile($ac_id)
     {
