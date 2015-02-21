@@ -6,19 +6,18 @@
                       			
                       		?>
 
-<div class="container">
-	<div class="profile-container">
 
 		<div class="col-sm-12 upper-profile">
 		   <div class="col-sm-4 image-profile">
 		   	   <img style="width:250px;height:250px;" src="<?php echo $data['picture']; ?>" alt="Profile pic">
-		   	   <div class="update-button">
-		   	   	    <a href="<?php echo base_url(). 'home/updateuser'?>"><button type="button" class="btn btn-primary">Update Account</button></a>
-		   	   </div>
+		   	   
 		   </div>
 		   <div class="col-sm-4 ac-profile">
 		   	   <p>Account Number</p> 
 		   	   <p><span class="text-color idno"><?php echo $data['ac_id']; ?></span></p>
+           <p class="update-button">
+                <a href="<?php echo base_url(). 'home/update/'?>"><button type="button" class="btn btn-primary">Update Profile</button></a>
+           </p>
 		   </div>
 		   <div class="col-sm-4 name-profile">
                <p>First Name : <span class="text-color first"><?php echo $data['f_name']; ?></span></p>
@@ -26,7 +25,7 @@
                <p>Last Name : <span class="text-color last"><?php echo $data['l_name']; ?></span></p>
                <p>Age : <span class="text-color extra"><?php echo $data['age']; ?></span></p>
 		   </div>
-	    </div>
+	 </div>
 
 	    <div class="col-sm-12 lower-profile">
           <div class="col-sm-4 first-profile">
@@ -43,8 +42,7 @@
           </div>
 	    </div>
 
-	</div>
-</div>
+      
 
 
 <?php 

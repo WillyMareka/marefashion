@@ -109,7 +109,7 @@
       <i class="user icon "></i> <?php echo $username;?><i class="dropdown icon"></i>
        <div class="menu">
         <a href="<?php echo base_url(). 'home/profile' ?>" class="item"><i class="edit icon"></i> View Profile</a>
-        <a href="<?php echo base_url(). '' ?>" class="item"><i class="mail icon"></i> Messages</a>
+        
         <div class="ui divider"></div>
         <a href='<?php echo base_url(). 'user/logout'?>' class="item"><i class="sign out icon"></i> Log Out</a>
        </div>

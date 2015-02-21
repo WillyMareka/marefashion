@@ -880,6 +880,45 @@ h2.title:before{
   color:#8e44ad;
 }
 
+.tablewhole{
+  width:1200px;
+  margin-left:50px;
+  margin-top: 15px;
+  
+}
+
+.tableheader{
+   background-color:#8e44ad ;
+   height: 50px;
+   text-align: center;
+   margin-bottom: 5px;
+   color: #ffffff;
+}
+
+.tablebody{
+   /*background-color:#666666 ;*/
+   /*color:;*/
+   height: 40px;
+   border: 1px solid #000000;
+}
+
+.tablefooter{
+  margin-top:60px;
+  background-color:#999999;
+  /*color:;*/
+}
+
+.remove{
+  color:red;
+  text-decoration: none;
+  /*background-color: red;*/
+}
+
+.cartbutton{
+  margin-left: 50px;
+  margin-top: 25px;
+}
+
 
 
 

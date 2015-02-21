@@ -22,6 +22,24 @@ class Home extends MY_Controller {
           
     }
 
+
+    public function update(){
+      $data['error'] = '';
+      $oid = $this->session->userdata('ac_id');
+        $results = $this->model_home->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+
+
+        $data['ownprofile'] = $odetails;
+
+        $this->load->view('header', array('logged_in' => $this->logged_in));
+        $this->load->view('update',$data);
+        $this->load->view('home_footer');
+    }
+
 	public function index()
 	{
 		$data['shirts'] = $this->getshirts();
@@ -46,7 +64,7 @@ class Home extends MY_Controller {
         
         $this->load->view('header', array('logged_in' => $this->logged_in, $data));
         $this->load->view('profile', $data);
-        $this->load->view('footer');
+        $this->load->view('home_footer');
     }
 
 	public function about()
@@ -175,7 +193,7 @@ class Home extends MY_Controller {
         return $accessories;
 	}
 
-  function updatemember()
+   function updatemember()
     {
         $this->load->library('form_validation');
         
@@ -192,14 +210,14 @@ class Home extends MY_Controller {
 
         if($this->form_validation->run() == FALSE){
            echo 'Not working';die();
-            redirect(base_url() .'home/index');
+            redirect(base_url() .'home/profile');
             
         }else{
 
                 $result = $this->model_home->update_member();
 
               if($result){
-                 redirect(base_url() .'home/index');
+                 redirect(base_url() .'home/profile');
 
               }else{
                  echo 'There was a problem with the website.<br/>Please contact the administrator';

@@ -1,23 +1,25 @@
 <?php //echo form_open(base_url().'shop/remove'.$rowid); ?>
 
-<table cellpadding="6" cellspacing="1" style="width:100%" border="0">
+<table class="tablewhole" cellpadding="6" cellspacing="1" border="2">
 
-<tr>
+<tr class="tableheader">
   <th>Quantity ordered</th>
   <th>Product</th>
-  <th style="text-align:right">Price</th>
-  <th style="text-align:right">Sub-Total</th>
-  <!-- <th style="">Remove</th> -->
+  <th>Price</th>
+  <th>Sub-Total</th>
+  <th>Action</th>
 </tr>
 
 
 <?php $i = 1; ?>
 
-<?php foreach ($this->cart->contents() as $items): ?>
+<?php foreach ($this->cart->contents() as $items): 
+   
+?>
 
 	<?php echo form_hidden($i.'[rowid]', $items['rowid']); ?>
 
-	<tr>
+	<tr class="tablebody">
 	  <td><?php echo form_input(array('name' => $i.'[qty]', 'value' => $items['qty'], 'maxlength' => '3', 'size' => '5')); ?></td>
 	  <td>
 		<?php echo $items['name']; ?>
@@ -36,21 +38,25 @@
 
 	  </td>
 	  
-	  <td style="text-align:right">Kshs<?php echo $this->cart->format_number($items['price']); ?></td>
-	  <td style="text-align:right">Kshs<?php echo $this->cart->format_number($items['subtotal']); ?></td>
-	  <td class="remove"><?php echo anchor('shop/remove/'.$items['rowid'], 'remove'); ?></td>
+	  <td>Kshs <?php echo $this->cart->format_number($items['price']); ?></td>
+	  <td>Kshs <?php echo $this->cart->format_number($items['subtotal']); ?></td>
+	  <td class="remove"><a href="<?php echo base_url().'shop/remove/'.$items['rowid'] ?>">Remove</a></td>
+	  	
 	</tr>
 
-<?php $i++; ?>
+<?php $i++; 
+
+
+?>
 
 <?php endforeach; ?>
 
-<tr>
+<tr class="tablefooter">
   <!-- <td colspan="2"> </td> -->
-  <td class="right"><strong>Grand Total</strong></td>
-  <td class="right">Kshs<?php echo $this->cart->format_number($this->cart->total()); ?></td>
+  <td ><strong>Grand Total</strong></td>
+  <td >Kshs <?php echo $this->cart->format_number($this->cart->total()); ?></td>
 </tr>
 
 </table>
 
-<p><?php echo form_submit('shop/update'.$items['rowid'], 'Update your Cart'); ?></p>
+<p class="cartbutton"><a href="<?php echo base_url(). 'shop/update/'.$items['rowid']?>"><button class="btn btn-success">Update Cart</button></a></p>
