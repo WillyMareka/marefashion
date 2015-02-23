@@ -5,18 +5,18 @@
 	<?php 
        $reply = str_replace('%20', ' ', $reply);
 	    
-	    if(isset($reply)){
+	    if($reply=NULL || $reply=''){
 
 	?>
 	    <div class="well well-sm">
-	    	Thank you for your comments, <?php echo $reply?>
+	    	Fill free to comment to our site
 	    </div>
 
 	<?php 
-          } else{
+          }elseif(isset($reply) && $reply!=NULL){
     ?>
           <div class="well well-sm">
-
+             Thank you for your comments, <?php echo $reply;?>
 	    </div>
 	<?php }?>
 				<!-- <div class="logo">
