@@ -13,7 +13,7 @@
 		   <div class="col-sm-4 image-profile">
 		   	   <img style="width:250px;height:250px;" src="<?php echo $data['picture']; ?>" alt="Profile pic">
 		   	   <div class="update-button">
-		   	   	    <a href="#"><button type="button" class="btn btn-primary">Update Account</button></a>
+		   	   	     <a href="<?php echo base_url(). 'products/update/'?>"><button type="button" class="btn btn-primary">Update Profile</button></a>
 		   	   </div>
 		   </div>
 		   <div class="col-sm-4 ac-profile">

@@ -43,14 +43,14 @@ class Products extends MY_Controller {
 
         if($this->form_validation->run() == FALSE){
            echo 'Not working';die();
-            redirect(base_url() .'home/index');
+            redirect(base_url() .'home/profile');
             
         }else{
 
-                $result = $this->model_home->update_member();
+                $result = $this->product_model->update_member();
 
               if($result){
-                 redirect(base_url() .'home/index');
+                 redirect(base_url() .'products/profile');
 
               }else{
                  echo 'There was a problem with the website.<br/>Please contact the administrator';
@@ -58,6 +58,39 @@ class Products extends MY_Controller {
 
 
          }
+    }
+
+    public function update(){
+      $data['error'] = '';
+      $oid = $this->session->userdata('ac_id');
+        $results = $this->model_home->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+
+
+        $data['ownprofile'] = $odetails;
+
+        $this->load->view('p_header', array('logged_in' => $this->logged_in));
+        $this->load->view('update',$data);
+        $this->load->view('p_footer');
+    }
+
+
+    public function profile()
+    {
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->product_model->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
+        
+        $this->load->view('p_header', array('logged_in' => $this->logged_in, $data));
+        $this->load->view('profile', $data);
+        $this->load->view('p_footer');
     }
 
 
@@ -88,20 +121,7 @@ class Products extends MY_Controller {
 		$this->load->view('p_footer');
     }
 
-    public function profile()
-    {
-        $oid = $this->session->userdata('ac_id');
-        $results = $this->product_model->ownprofile($oid);
-
-        foreach ($results as $key => $values) {
-            $odetails['ownprofile'][] = $values;  
-        }
-        $data['ownprofile'] = $odetails;
-        
-        $this->load->view('p_header', array('logged_in' => $this->logged_in, $data));
-        $this->load->view('profile', $data);
-        $this->load->view('p_footer');
-    }
+    
 
 
 

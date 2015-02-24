@@ -49,7 +49,7 @@ class Product_model extends MY_Model {
 
       }else{
 
-      $subject = 'Member Entry';
+      $subject = 'Member Update';
       $message = 'Problem in registering User ID '.$id.' . Please rectify immediatelly';
 
       $message_details_data = array();
@@ -83,7 +83,6 @@ class Product_model extends MY_Model {
         return FALSE;
      }
     }
-
    
 
   public function get_details()

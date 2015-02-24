@@ -47,8 +47,8 @@ class Model_home extends MY_Model {
 
       }else{
 
-      $subject = 'Member Entry';
-      $message = 'Problem in registering User ID '.$id.' . Please rectify immediatelly';
+      $subject = 'Member Update';
+      $message = 'Problem in registering User ID '.$id.'. Please rectify immediatelly';
 
       $message_details_data = array();
       $message_details = array(

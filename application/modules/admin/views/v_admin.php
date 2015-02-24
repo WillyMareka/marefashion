@@ -54,7 +54,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" data-toggle="modal" data-target="#myModal">Profile</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'user/profile'?>">Profile</a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>
@@ -599,7 +599,7 @@
 
 
         <script src="<?php echo base_url(). 'assets/bootstrap/js/bootstrap.js'?>"></script>
-        <script src="<?php echo base_url(). 'assets/vendors/easypiechart/jquery.easy-pie-chart.js'?>"></script>
+        
         <script src="<?php echo base_url(). 'assets/js/ad_scripts.js'?>"></script>
         
         <!--<script src="<?php echo base_url(). 'assets/js/jquery-2.1.1.min.js'?>"></script>-->
@@ -608,12 +608,12 @@
             
         });
         </script>
-        <script>
-        $(function() {
-            // Easy pie charts
-            $('.chart').easyPieChart({animate: 1000});
-        });
-        </script>
+        // <script>
+        // $(function() {
+        //     // Easy pie charts
+        //     $('.chart').easyPieChart({animate: 1000});
+        // });
+        // </script>
         <script type="text/javascript">
             $('#aproducttable').dataTable();
             $('#acompanytable').dataTable();
