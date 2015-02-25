@@ -29,7 +29,6 @@
         <script type="text/javascript" src="<?php echo base_url().'assets/js/jquery.datatables/jquery.datatables.min.js'; ?>"></script>
         <script type="text/javascript" src="<?php echo base_url().'assets/js/jquery.datatables/bootstrap-adapter/js/datatables.js'; ?>"></script>
         <link type="text/css" href="<?php echo base_url() .'assets/css/ad_styles.css' ?>" rel="stylesheet" media="screen">
-        
     </head>
     
     <body>
@@ -119,8 +118,8 @@
                 </div>
             </div>
         </div>
-  
-  
+
+      
 
         <div class="container-fluid">
             <div class="row-fluid">
@@ -150,128 +149,177 @@
                 </div>
                 
                 <!--/span-->
-    
         
                 <div class="span9" id="content">
+                      
 
-
-
+                  
                     
-                    <div class="row-fluid addlength">
-                        <!-- <div class="alert alert-success">
-							<button type="button" class="close" data-dismiss="alert">&times;</button>
-                            <h4>Success</h4>
-                        	Logged in succesfully</div> -->
-                        	<div class="navbar">
-                            	<div class="navbar-inner">
-	                                <ul class="breadcrumb">
-	                                    <i class="icon-chevron-left hide-sidebar"><a href='#' title="Hide Sidebar" rel='tooltip'>&nbsp;</a></i>
-	                                    <i class="icon-chevron-right show-sidebar" style="display:none;"><a href='#' title="Show Sidebar" rel='tooltip'>&nbsp;</a></i>
-	                                    <li>
-	                                        <a href="#">Dashboard</a> <span class="divider">|</span>	
-	                                    </li>
-	                                    
-	                                    <li class="active">Messages</li>
-	                                </ul>
-                            	</div>
-                        	</div>
-                    	</div>
 
-                        <!-- stats -->
+  							<?php foreach ($ownprofile as $key => $value) {
+                      	 foreach ($value as $q => $data) {
+                      		
+                      		//echo '<pre>';print_r($ownprofile);echo'</pre>';die();
+                      		for ($i=0; $i <= $key ; $i++) { 
+                      			
+                      		?>
 
 
-                 <!-- <div class="row-fluid">
-                        
+		<div class="span9" id="content">
+                      
+
+                  
+                    <div class="row-fluid">
+                         <!-- block -->
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Statistics</div>
-                                <div class="pull-right"><span class="badge badge-warning">View More</span>
-
-                                </div>
+                                <div class="muted pull-left"><?php echo $username?></div>
                             </div>
                             <div class="block-content collapse in">
-                                <div class="span3">
-                                    <div class="chart" data-percent="73">73%</div>
-                                    <div class="chart-bottom-heading"><span class="label label-info">Visitors</span>
+                                <div class="span12">
+          <!-- BEGIN FORM-->
+          <form enctype="multipart/form-data" method="POST" action="<?php echo base_url() . 'manager/updatemember'?>" class="form-horizontal black" role="form">
+            <?php 
+                                  echo form_open_multipart(base_url().'manager/updatemember');
+                              ?>
+                        <fieldset>
+              <div class="alert alert-error hide">
+                <button class="close" data-dismiss="alert"></button>
+                Please complete filling the form
+              </div>
+              <div class="alert alert-success hide">
+                <button class="close" data-dismiss="alert"></button>
+                Product has been added successfully
+              </div>
 
-                                    </div>
-                                </div>
-                                <div class="span3">
-                                    <div class="chart" data-percent="53">53%</div>
-                                    <div class="chart-bottom-heading"><span class="label label-info">Page Views</span>
+              <div class="control-group">
+                <div class="controls">
+                  <img src="<?php echo $data['picture']; ?>" alt="Profile Pic"/>
+                </div>
+              </div>
 
-                                    </div>
-                                </div>
-                                <div class="span3">
-                                    <div class="chart" data-percent="83">83%</div>
-                                    <div class="chart-bottom-heading"><span class="label label-info">Users</span>
+              <div class="control-group">
+                  <label class="control-label">Account No:</label>
+                  <div class="controls">
+                    <input type="text" name="id" data-required="1" required value="<?php echo $data['ac_id']; ?>" class="span6 m-wrap form-control" readonly/>
+                  </div>
+                </div>
 
-                                    </div>
-                                </div>
-                                <div class="span3">
-                                    <div class="chart" data-percent="13">13%</div>
-                                    <div class="chart-bottom-heading"><span class="label label-info">Orders</span>
+                <div class="control-group">
+                  <label class="control-label">First Name:</label>
+                  <div class="controls">
+                    <input type="text" name="fname" data-required="1" required value="<?php echo $data['f_name']; ?>" class="span6 m-wrap form-control"/>
+                  </div>
+                </div>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                      
-                    </div> -->  
+                <div class="control-group">
+                  <label class="control-label">Middle Name:</label>
+                  <div class="controls">
+                    <input type="text" name="mname" data-required="1" required value="<?php echo $data['m_name']; ?>" class="span6 m-wrap form-control"/>
+                  </div>
+                </div>
 
-                    <!-- /stats -->
+                <div class="control-group">
+                  <label class="control-label">Last Name:</label>
+                  <div class="controls">
+                    <input type="text" name="lname" data-required="1" required value="<?php echo $data['l_name']; ?>" class="span6 m-wrap form-control"/>
+                  </div>
+                </div>
 
-                    
+                <div class="control-group">
+                  <label class="control-label">Age:</label>
+                  <div class="controls">
+                    <input type="text" name="age" data-required="1" required value="<?php echo $data['age']; ?>" class="span6 m-wrap form-control"/>
+                  </div>
+                </div>
 
-                    <div class="row-fluid addlength">
-                        <div class="span12">
-                            <!-- block -->
-                            <div class="block">
-                                <div class="navbar navbar-inner block-header">
-                                    <div class="muted pull-left">Messages</div>
-                                    <div class="pull-right"><span class="badge badge-info"><?php echo $messagenumber?></span>
+                <div class="control-group">
+                  <label class="control-label">Nationality:</label>
+                  <div class="controls">
+                    <input type="text" name="nationality" data-required="1" required value="<?php echo $data['nationality']; ?>" class="span6 m-wrap form-control"/>
+                  </div>
+                </div>
 
-                                    </div>
-                                </div>
-                                <div class="block-content collapse in">
-                                    <table class="table table-striped datatable" id="producttable">
-                                        <thead>
+                <div class="control-group">
+                  <label class="control-label">Phone Number:</label>
+                  <div class="controls">
+                    <input type="text" name="pnumber" data-required="1" required value="<?php echo $data['phone_no']; ?>" class="span6 m-wrap form-control"/>
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label">Email:</label>
+                  <div class="controls">
+                    <input type="text" name="email" data-required="1" required value="<?php echo $data['email']; ?>" class="span6 m-wrap form-control"/>
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label">Residence:</label>
+                  <div class="controls">
+                    <input type="text" name="residence" data-required="1" required value="<?php echo $data['residence']; ?>" class="span6 m-wrap form-control"/>
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label">Religion:</label>
+                  <div class="controls">
+                    <input type="text" name="religion" data-required="1" required value="<?php echo $data['religion']; ?>" class="span6 m-wrap form-control"/>
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label class="control-label">Gender:</label>
+                  <div class="controls">
+                    <input type="text" name="gender" data-required="1" required value="<?php echo $data['gender']; ?>" class="span6 m-wrap form-control"/>
+                  </div>
+                </div>
+
+                
+              
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">Update Profile</button>
+                  <button type="reset" class="btn">Cancel</button>
+                </div>
+            </fieldset>
+                        <?php 
+                                    echo form_close();
+                                 ?>
+          </form>
+          <!-- END FORM-->
+        </div>
+          </div>
+      </div>
+                     
+        </div>
 
 
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Subject</th>
-                                                <th>Message</th>
-                                                <th>Date / Time Sent</th>
-                                                <th>View</th>
-                                                <th>Delete</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php echo $message_table; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <!-- /block -->
-                        </div>
 
-                    </div>
+                </div>
+
+      
+
+
+<?php 
+                             }
+                      	 }
+                      	
+                      } 
+						?>
+  							
+  					
+
+
+
 
                 </div>
             </div>
-            
-        <!--/.fluid-container-->
-
-
-                        <hr>
+            <hr>
             <footer>
-                <p>&copy; MareWill Fashion 2015</p>
+                <p> MareWill Fashion 2015 &copy;</p>
             </footer>
         </div>
-
-        
-
+        <!--/.fluid-container-->
         <script src="<?php echo base_url(). 'assets/bootstrap/js/bootstrap.js'?>"></script>
         <script src="<?php echo base_url(). 'assets/vendors/easypiechart/jquery.easy-pie-chart.js'?>"></script>
         <script src="<?php echo base_url(). 'assets/js/ad_scripts.js'?>"></script>
@@ -289,11 +337,13 @@
         });
         </script>
         <script type="text/javascript">
-            $('#producttable').dataTable();
+            $('#aproducttable').dataTable();
+            $('#acompanytable').dataTable();
+            $('#ausertable').dataTable();
+
             $('.dataTables_filter input').addClass('form-control').attr('placeholder','Search');
             $('.dataTables_length select').addClass('form-control');
         </script>
     </body>
 
 </html>
-        

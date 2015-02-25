@@ -116,14 +116,14 @@ class Manager extends MY_Controller {
 
         if($this->form_validation->run() == FALSE){
            echo 'Not working';die();
-            redirect(base_url() .'manager/home');
+            redirect(base_url() .'manager/profile');
             
         }else{
 
                 $result = $this->m_manager->update_member();
 
               if($result){
-                 redirect(base_url() .'manager/home');
+                 redirect(base_url() .'manager/profile');
 
               }else{
                  echo 'There was a problem with the website.<br/>Please contact the administrator';
@@ -862,6 +862,25 @@ class Manager extends MY_Controller {
    	$this->load->view('manager', $data);
    		
    } 
+
+   public function profile()
+    {
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
+        $data['messagenumber']  = $this->getmessagenumber();
+    $data['productnumber']  = $this->getproductnumber();
+    $data['categorynumber']  = $this->getcategorynumber();
+    $data['typenumber']  = $this->gettypenumber();
+    $data['companynumber']  = $this->getcompanynumber();
+        
+        $this->load->view('profile', $data);
+
+    }
 
    function productsview()
    {

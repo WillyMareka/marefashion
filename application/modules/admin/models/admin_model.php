@@ -10,6 +10,7 @@ class Admin_model extends MY_Model {
 
 
 
+
    public function usernumber(){
     $sql = "SELECT COUNT(`ac_id`) as users FROM accounts WHERE is_deleted = 0";
 
@@ -558,7 +559,7 @@ class Admin_model extends MY_Model {
       $firstname = strtoupper($this->input->post('fname'));
       $middlename = strtoupper($this->input->post('mname'));
       $lastname = strtoupper($this->input->post('lname'));
-      $filename = $this->input->post('picture');
+      
       $pnumber = $this->input->post('pnumber');
       $gender = strtoupper($this->input->post('gender'));
       $nationality = strtoupper($this->input->post('nationality'));
@@ -592,8 +593,8 @@ class Admin_model extends MY_Model {
 
       }else{
 
-      $subject = 'Member Entry';
-      $message = 'Problem in registering User ID '.$id.' . Please rectify immediatelly';
+      $subject = 'Member Update';
+      $message = 'Problem in registering User ID '.$id.'. Please rectify immediatelly';
 
       $message_details_data = array();
       $message_details = array(

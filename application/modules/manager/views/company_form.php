@@ -54,7 +54,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" data-toggle="modal" data-target="#myModal">Profile</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'manager/profile'?>">Profile</a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>

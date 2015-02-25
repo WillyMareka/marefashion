@@ -22,9 +22,9 @@ class Admin extends MY_Controller {
         $this->pic_path = realpath(APPPATH . '../uploads/');
           
     }
-   
 
-    function updatemember()
+    
+   function updatemember()
     {
         $this->load->library('form_validation');
         
@@ -44,19 +44,21 @@ class Admin extends MY_Controller {
             redirect(base_url() .'admin/users');
             
         }else{
-
                 $result = $this->admin_model->update_member();
+              //echo '<pre>';print_r($result);echo '</pre>';die();
 
               if($result){
                  redirect(base_url() .'admin/users');
 
               }else{
-                 echo 'There was a problem with the website.<br/>Please contact the administrator';
+                 echo 'There was a problem with the website updating system.<br/>Please contact the administrator';
               }
 
 
          }
     }
+
+    
 
 
     function productupdate()
@@ -687,6 +689,43 @@ class Admin extends MY_Controller {
         $this->load->view('view_user', $data);
  
     }
+
+    public function profile()
+    {
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->admin_model->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
+        $data['messagenumber']  = $this->getmessagenumber();
+        $data['productnumber']  = $this->getproductnumber();
+        $data['usernumber']  = $this->getusernumber();
+        $data['companynumber']  = $this->getcompanynumber();
+        
+        $this->load->view('profile', $data);
+
+    }
+
+    public function update(){
+      $data['error'] = '';
+      $oid = $this->session->userdata('ac_id');
+        $results = $this->model_home->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+
+
+        $data['ownprofile'] = $odetails;
+
+    
+        $this->load->view('update',$data);
+        
+    }
+
+
 
     function viewcompany($id)
     {

@@ -57,7 +57,7 @@
                                         <a tabindex="-1" href="<?php echo base_url(). 'home/index'?>">Home Page</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="<?php echo base_url(). 'user/profile'?>">Profile</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/profile'?>">Profile</a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>

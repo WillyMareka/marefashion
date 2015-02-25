@@ -81,7 +81,7 @@
       }else{
   ?>
   <?php
-        $username = 'Ananonymous User';
+        $username = 'Anonymous User';
   ?>
 
   
