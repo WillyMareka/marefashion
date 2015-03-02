@@ -25,7 +25,27 @@ $(document).ready(function(){
     //alert('Hello');
   	$('#companycombo').change(function(){
   		compvalue = $(this).val();
-  		  if(compvalue !== 'Select the Company'){
+  		  if(compvalue !== ''){
+              $(this).addClass('criteriabutsel');
+              //alert('changed');
+  		  }else{
+              $(this).removeClass('criteriabutsel');
+  		  }
+  	});
+
+  	$('#categorycombo').change(function(){
+  		compvalue = $(this).val();
+  		  if(compvalue !== ''){
+              $(this).addClass('criteriabutsel');
+              //alert('changed');
+  		  }else{
+              $(this).removeClass('criteriabutsel');
+  		  }
+  	});
+
+  	$('#typecombo').change(function(){
+  		compvalue = $(this).val();
+  		  if(compvalue !== ''){
               $(this).addClass('criteriabutsel');
               //alert('changed');
   		  }else{
