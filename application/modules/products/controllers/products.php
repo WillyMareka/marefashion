@@ -26,6 +26,8 @@ class Products extends MY_Controller {
 	}
 
 
+
+
     function updatemember()
     {
         $this->load->library('form_validation');
@@ -165,9 +167,13 @@ class Products extends MY_Controller {
 
 	function choosecriteria()
 	{
-		$proddet = array();
-       $results = $this->product_model->get_details();
+    $prod_company = $this->input->post("prodcompany");
+    $prod_cat = $this->input->post("prodcategory");
+    $prod_type = $this->input->post("prodtype");
 
+		$proddet = array();
+       $results = $this->product_model->get_details($prod_company, $prod_cat, $prod_type);
+       //echo '<pre>';print_r($results);echo '</pre>';die;
        foreach ($results as $key => $values) {
        	 
        	 	
@@ -175,8 +181,7 @@ class Products extends MY_Controller {
          
        }
 
-       // echo '<pre>';print_r($proddet);echo '</pre>';die;
-
+       
         return $proddet;
 	}
 

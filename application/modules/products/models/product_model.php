@@ -85,11 +85,34 @@ class Product_model extends MY_Model {
     }
    
 
-  public function get_details()
+  public function get_details($prod_company, $prod_cat, $prod_type)
   {
     $products = array();
-    $query = $this->db->get_where('products', array('is_deleted' => 0, 'approved'=> 1));
-    $result = $query->result_array();
+    $prod_company = $this->input->post('prodcompany');
+    $prod_cat = $this->input->post('prodcategory');
+    $prod_type = $this->input->post('prodtype');
+
+    $criteria = (isset($prod_company)&& ($prod_company!='')) ?" AND prod_company = $prod_company" : null;
+    $criteria .= (isset($prod_cat) && ($prod_cat!='')) ? " AND prod_cat = $prod_cat " : null;
+    $criteria .= (isset($prod_type) && ($prod_type!='') ) ? " AND prod_type = $prod_type " : null;
+
+    // $criteria  = ( ($prod_company!==NULL) && ($prod_company!='')  ) ? " AND prod_company = $prod_company " : null;
+    // $criteria .= ( ($prod_cat!==NULL) && ($prod_cat!='') ) ? " AND prod_cat = $prod_cat " : null;
+    // $criteria .= ( ($prod_type!==NULL) && ($prod_type!='') ) ? " AND prod_type = $prod_type " : null;
+
+    $query = "SELECT * 
+              FROM products WHERE
+              is_deleted = 0 
+              $criteria
+              AND approved = 1
+              ";
+
+               //echo '<pre>';print_r($query);echo '</pre>';die;
+
+
+    // $query = $this->db->get_where('products', array('is_deleted' => 0, 'approved'=> 1));
+    $this->dataSet = $this->db->query($query);
+    $result = $this->dataSet->result_array();
 
     if ($result) {
       foreach ($result as $key => $value) {
