@@ -92,13 +92,10 @@ class Product_model extends MY_Model {
     $prod_cat = $this->input->post('prodcategory');
     $prod_type = $this->input->post('prodtype');
 
-    $criteria = (isset($prod_company)&& ($prod_company!='')) ?" AND prod_company = $prod_company" : null;
-    $criteria .= (isset($prod_cat) && ($prod_cat!='')) ? " AND prod_cat = $prod_cat " : null;
-    $criteria .= (isset($prod_type) && ($prod_type!='') ) ? " AND prod_type = $prod_type " : null;
+    $criteria = (isset($prod_company)&& ($prod_company!='')) ?" AND prod_company = '$prod_company' " : null;
+    $criteria .= (isset($prod_cat) && ($prod_cat!='')) ? " AND prod_cat = '$prod_cat' " : null;
+    $criteria .= (isset($prod_type) && ($prod_type!='') ) ? " AND prod_type = '$prod_type' " : null;
 
-    // $criteria  = ( ($prod_company!==NULL) && ($prod_company!='')  ) ? " AND prod_company = $prod_company " : null;
-    // $criteria .= ( ($prod_cat!==NULL) && ($prod_cat!='') ) ? " AND prod_cat = $prod_cat " : null;
-    // $criteria .= ( ($prod_type!==NULL) && ($prod_type!='') ) ? " AND prod_type = $prod_type " : null;
 
     $query = "SELECT * 
               FROM products WHERE
