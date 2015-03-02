@@ -309,10 +309,7 @@
 						</ul>
 					</div> -->
 
-					<?php echo $this->table->generate($records);
-
-							echo '<div id="pagination" class="span12 pagination">' .$this->pagination->create_links(). '</div>';
-							 ?>
+					
 
 
 
