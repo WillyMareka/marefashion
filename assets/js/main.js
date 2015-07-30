@@ -2,7 +2,7 @@
 /*scroll to top*/
 
 $(document).ready(function(){
-
+  //alert("reaching");
 	$(function () {
 		$.scrollUp({
 	        scrollName: 'scrollUp', // Element ID
